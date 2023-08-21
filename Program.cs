@@ -35,12 +35,13 @@ namespace textFileReadWrite
         /// <summary>
         /// // new CONFIG(string "설정 파일명", string "폴더명:기본값etc")
         /// </summary>
-        public CONFIG(string filePath, string _file_name, string _dir_path = "etc")
+        public CONFIG(string home_path, string _file_name, string _dir_path = "etc")
         {
+            // home_path = System.Windows.Forms.Application.StartupPath;
             dir_path = _dir_path;
             file_name = _file_name;
 
-            path = System.IO.Path.Combine(filePath, dir_path, file_name);
+            path = System.IO.Path.Combine(home_path, dir_path, file_name);
 
             // 디렉토리 생성
             if (System.IO.Directory.Exists(dir_path) == false)
